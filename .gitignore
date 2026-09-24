@@ -27,3 +27,5 @@ logs
 *.sketch
 *.fig
 *.xd
+
+.scratch
