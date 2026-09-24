@@ -1,0 +1,44 @@
+{
+  "name": "frontend-mentor-challenges",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "nuxt typecheck",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "@nuxt/fonts": "0.14.0",
+    "@nuxt/icon": "2.5.1",
+    "@nuxt/image": "2.1.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "nuxt": "^4.5.2",
+    "tailwindcss": "^4.3.3",
+    "vue": "^3.5.43",
+    "vue-router": "^5.3.1"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.136",
+    "@nuxt/eslint": "^1.17.0",
+    "@nuxt/test-utils": "^4.3.2",
+    "@vue/test-utils": "^2.5.1",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "happy-dom": "^20.14.5",
+    "playwright-core": "^1.63.0",
+    "prettier": "^3.9.8",
+    "prettier-plugin-tailwindcss": "^0.8.1",
+    "typescript": "^6.0.3",
+    "vitest": "^5.0.1",
+    "vue-tsc": "^3.3.11"
+  }
+}
