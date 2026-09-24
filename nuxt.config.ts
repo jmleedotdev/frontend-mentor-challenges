@@ -43,5 +43,12 @@ export default defineNuxtConfig({
 
   image: {
     densities: [1, 2],
+    vercel: {
+      formats: ['image/avif', 'image/webp'],
+    },
+  },
+
+  fonts: {
+    families: [{ name: 'Figtree', weights: ['500 800'] }],
   },
 })

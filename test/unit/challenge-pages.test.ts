@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest'
 import { challenges } from '../../server/utils/challenges'
 
 const pagesDir = new URL('../../app/pages/', import.meta.url)
+const imgDir = new URL('../../public/img/', import.meta.url)
 const slugs = challenges.map((challenge) => challenge.slug)
 
 describe('challenge data ↔ pages', () => {
@@ -10,6 +11,10 @@ describe('challenge data ↔ pages', () => {
 
   it.each(slugs)('has a page for "%s"', (slug) =>
     expect(existsSync(new URL(`${slug}/index.vue`, pagesDir))).toBe(true),
+  )
+
+  it.each(slugs)('has a thumbnail.jpg for "%s"', (slug) =>
+    expect(existsSync(new URL(`${slug}/thumbnail.jpg`, imgDir))).toBe(true),
   )
 
   it('has a data entry for every challenge page folder', () => {

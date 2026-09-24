@@ -11,7 +11,7 @@ defineProps<{ challenge: Challenge }>()
   >
     <div class="relative aspect-4/3 bg-gray-100">
       <NuxtImg
-        :src="`/images/${challenge.slug}/thumbnail.webp`"
+        :src="`/img/${challenge.slug}/thumbnail.jpg`"
         alt=""
         width="384"
         height="288"

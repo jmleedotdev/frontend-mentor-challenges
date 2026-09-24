@@ -1,5 +1,3 @@
-import type { Challenge } from '#shared/types/challenge'
-
 /**
  * Loads the current challenge's entry (slug = first path segment) and sets its SEO meta.
  * Throws a 404 if the page has no matching entry in `server/utils/challenges.ts`.
@@ -17,7 +15,7 @@ export async function useChallengePage() {
     description: () => challenge.value?.description,
     ogTitle: () => challenge.value?.title,
     ogDescription: () => challenge.value?.description,
-    ogImage: `${siteUrl}/images/${slug}/thumbnail.webp`,
+    ogImage: `${siteUrl}/img/${slug}/thumbnail.jpg`,
   })
 
   await request

@@ -29,3 +29,4 @@ logs
 *.xd
 
 .scratch
+.vercel
