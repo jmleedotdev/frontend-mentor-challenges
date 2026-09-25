@@ -21,7 +21,10 @@ export default defineNuxtConfig({
     head: {
       title: 'Frontend Mentor Challenges',
       htmlAttrs: { lang: 'en' },
-      link: [{ rel: 'icon', href: '/favicon.ico' }],
+      link: [
+        { rel: 'icon', href: '/favicon.ico' },
+        { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
+      ],
     },
   },
 
