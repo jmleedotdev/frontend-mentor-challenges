@@ -1,5 +1,6 @@
 import { readdirSync } from 'node:fs'
 import tailwindcss from '@tailwindcss/vite'
+import { SITE_NAME } from './shared/utils/site'
 
 // Every folder in app/pages is a challenge; prerender them (the gallery `/` stays server-rendered).
 const challengeRoutes = readdirSync(new URL('./app/pages', import.meta.url), {
@@ -19,10 +20,11 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Frontend Mentor Challenges',
+      title: SITE_NAME,
       htmlAttrs: { lang: 'en' },
       link: [
-        { rel: 'icon', href: '/favicon.ico' },
+        { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
+        { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
         { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
       ],
     },

@@ -4,7 +4,7 @@
       class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-4 md:flex-row md:items-center md:justify-between md:px-6"
     >
       <h1 class="text-xl font-semibold tracking-tight">
-        <NuxtLink to="/">Frontend Mentor Challenges</NuxtLink>
+        <NuxtLink to="/">{{ SITE_NAME }}</NuxtLink>
       </h1>
       <div class="flex flex-col gap-3 md:flex-row md:items-center">
         <SearchInput class="md:w-72" />

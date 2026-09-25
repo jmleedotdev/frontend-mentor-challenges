@@ -8,7 +8,7 @@ const visibleChallenges = computed(() =>
 
 useSeoMeta({
   description: "JM Lee's solutions to Frontend Mentor challenges.",
-  ogTitle: 'Frontend Mentor Challenges',
+  ogTitle: SITE_NAME,
   ogDescription: "JM Lee's solutions to Frontend Mentor challenges.",
 })
 </script>

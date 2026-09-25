@@ -18,6 +18,7 @@ export async function useChallengePage() {
     ogImage: `${siteUrl}/img/${slug}/thumbnail.jpg`,
     ogImageWidth: 1440,
     ogImageHeight: 1056,
+    ogImageAlt: () => `Preview of the ${challenge.value?.title} challenge`,
     ogType: 'website',
   })
 
