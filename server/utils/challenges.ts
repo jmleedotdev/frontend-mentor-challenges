@@ -13,4 +13,11 @@ export const challenges: Challenge[] = [
       'A nice layout-based challenge for beginners. This will test anyone who is new to multi-column and responsive layouts.',
     difficulty: 1,
   },
+  {
+    slug: 'product-preview-card-component',
+    title: 'Product preview card component',
+    description:
+      'This HTML & CSS-only challenge will be perfect for anyone starting to build responsive projects.',
+    difficulty: 1,
+  },
 ]
