@@ -54,6 +54,9 @@ export default defineNuxtConfig({
   },
 
   fonts: {
-    families: [{ name: 'Figtree', weights: ['500 800'] }],
+    families: [
+      { name: 'Figtree', weights: ['500 800'] },
+      { name: 'Poppins', weights: ['200', '400', '600'] },
+    ],
   },
 })
