@@ -20,4 +20,11 @@ export const challenges: Challenge[] = [
       'This HTML & CSS-only challenge will be perfect for anyone starting to build responsive projects.',
     difficulty: 1,
   },
+  {
+    slug: 'qr-code-component',
+    title: 'QR code component',
+    description:
+      "A perfect first challenge if you're new to HTML and CSS. The card layout doesn't shift, so it's ideal if you haven't learned about building responsive layouts yet.",
+    difficulty: 1,
+  },
 ]
