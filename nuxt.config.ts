@@ -59,6 +59,8 @@ export default defineNuxtConfig({
       { name: 'Poppins', weights: [200, 400, 600] },
       { name: 'Montserrat', weights: [500, 700] },
       { name: 'Fraunces', weights: [700] },
+      { name: 'Young Serif', weights: [400] },
+      { name: 'Outfit', weights: [400, 600, 700] },
     ],
   },
 })

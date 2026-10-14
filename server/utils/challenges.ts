@@ -27,4 +27,11 @@ export const challenges: Challenge[] = [
       "A perfect first challenge if you're new to HTML and CSS. The card layout doesn't shift, so it's ideal if you haven't learned about building responsive layouts yet.",
     difficulty: 1,
   },
+  {
+    slug: 'recipe-page',
+    title: 'Recipe page',
+    description:
+      'This challenge will help you focus on writing semantic HTML. Ensure you think through what HTML elements are most appropriate for each piece of content.',
+    difficulty: 1,
+  },
 ]
