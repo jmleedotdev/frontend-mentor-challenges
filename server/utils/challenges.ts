@@ -34,4 +34,11 @@ export const challenges: Challenge[] = [
       'This challenge will help you focus on writing semantic HTML. Ensure you think through what HTML elements are most appropriate for each piece of content.',
     difficulty: 1,
   },
+  {
+    slug: 'social-links-profile',
+    title: 'Social links profile',
+    description:
+      "In this small project, you'll build out your social link-sharing profile. You can even personalize it and use it to share all your social profiles!",
+    difficulty: 1,
+  },
 ]

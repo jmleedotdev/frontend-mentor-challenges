@@ -61,6 +61,7 @@ export default defineNuxtConfig({
       { name: 'Fraunces', weights: [700] },
       { name: 'Young Serif', weights: [400] },
       { name: 'Outfit', weights: [400, 600, 700] },
+      { name: 'Inter', weights: [400, 600, 700] },
     ],
   },
 })
