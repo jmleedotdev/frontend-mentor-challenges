@@ -62,6 +62,7 @@ export default defineNuxtConfig({
       { name: 'Young Serif', weights: [400] },
       { name: 'Outfit', weights: [400, 600, 700] },
       { name: 'Inter', weights: [400, 600, 700] },
+      { name: 'Barlow Semi Condensed', weights: [500, 600] },
     ],
   },
 })

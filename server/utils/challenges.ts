@@ -41,4 +41,11 @@ export const challenges: Challenge[] = [
       "In this small project, you'll build out your social link-sharing profile. You can even personalize it and use it to share all your social profiles!",
     difficulty: 1,
   },
+  {
+    slug: 'testimonials-grid-section',
+    title: 'Testimonials grid section',
+    description:
+      "This challenge will be perfect practice for anyone wanting to test their CSS Grid skills. Grid is such a powerful addition to CSS, so it's worth getting to grips with it!",
+    difficulty: 2,
+  },
 ]
