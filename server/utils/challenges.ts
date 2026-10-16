@@ -48,4 +48,11 @@ export const challenges: Challenge[] = [
       "This challenge will be perfect practice for anyone wanting to test their CSS Grid skills. Grid is such a powerful addition to CSS, so it's worth getting to grips with it!",
     difficulty: 2,
   },
+  {
+    slug: 'meet-landing-page',
+    title: 'Meet landing page',
+    description:
+      "This HTML & CSS only challenge is perfect if you're starting to get a bit comfortable with your layout skills. The responsive layout shifts will also be a great test!",
+    difficulty: 1,
+  },
 ]

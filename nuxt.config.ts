@@ -14,7 +14,14 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
-  modules: ['@nuxt/eslint', '@nuxt/fonts', '@nuxt/image', '@nuxt/test-utils', '@nuxt/icon'],
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxt/image',
+    '@nuxt/test-utils',
+    '@nuxt/icon',
+    'motion-v/nuxt',
+  ],
 
   css: ['~/assets/css/main.css'],
 
@@ -63,6 +70,7 @@ export default defineNuxtConfig({
       { name: 'Outfit', weights: [400, 600, 700] },
       { name: 'Inter', weights: [400, 600, 700] },
       { name: 'Barlow Semi Condensed', weights: [500, 600] },
+      { name: 'Red Hat Display', weights: [500, 900] },
     ],
   },
 })
