@@ -71,6 +71,7 @@ export default defineNuxtConfig({
       { name: 'Inter', weights: [400, 600, 700] },
       { name: 'Barlow Semi Condensed', weights: [500, 600] },
       { name: 'Red Hat Display', weights: [500, 900] },
+      { name: 'Manrope', weights: [500, 700] },
     ],
   },
 })

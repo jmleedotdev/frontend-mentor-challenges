@@ -55,4 +55,11 @@ export const challenges: Challenge[] = [
       "This HTML & CSS only challenge is perfect if you're starting to get a bit comfortable with your layout skills. The responsive layout shifts will also be a great test!",
     difficulty: 1,
   },
+  {
+    slug: 'article-preview-component',
+    title: 'Article preview component',
+    description:
+      "Practice your layout skills with this article preview component. There's lots of fun to be had playing around with animations for the sharing icons as well.",
+    difficulty: 1,
+  },
 ]
