@@ -62,4 +62,11 @@ export const challenges: Challenge[] = [
       "Practice your layout skills with this article preview component. There's lots of fun to be had playing around with animations for the sharing icons as well.",
     difficulty: 1,
   },
+  {
+    slug: 'newsletter-sign-up',
+    title: 'Newsletter sign up',
+    description:
+      'This will test your skills with basic form structure, validation, and submission. The success state will also be an excellent opportunity to work with DOM manipulation.',
+    difficulty: 2,
+  },
 ]
