@@ -28,6 +28,11 @@ async function visit(viewport) {
   await page
     .locator('main img')
     .evaluateAll((images) => Promise.all(images.map((image) => image.decode())))
+  await page
+    .locator('.signup-card')
+    .evaluate((element) =>
+      Promise.all(element.getAnimations().map((animation) => animation.finished)),
+    )
   return page
 }
 

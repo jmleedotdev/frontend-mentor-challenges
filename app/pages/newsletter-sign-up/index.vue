@@ -334,4 +334,22 @@ input[aria-invalid='true']:focus {
     margin-top: 32px;
   }
 }
+
+@media (min-width: 48rem) and (prefers-reduced-motion: no-preference) {
+  article {
+    animation: fade-in 1s ease-out;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 </style>
