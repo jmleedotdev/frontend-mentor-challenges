@@ -2,11 +2,14 @@
 // Set PLAYWRIGHT_CHANNEL=chrome to use a locally installed Chrome browser.
 import assert from 'node:assert/strict'
 import { mkdir } from 'node:fs/promises'
+import { join } from 'node:path'
 import { after, before, test } from 'node:test'
 import { chromium } from 'playwright-core'
 
 const baseUrl = process.env.TEST_BASE_URL ?? 'http://localhost:3000'
 const screenshotDir = process.env.SCREENSHOT_DIR
+  ? join(process.env.SCREENSHOT_DIR, 'newsletter-sign-up')
+  : undefined
 let browser
 
 before(async () => {
