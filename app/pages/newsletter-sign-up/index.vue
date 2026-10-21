@@ -48,7 +48,7 @@ async function closeSuccess() {
 
 <template>
   <main id="newsletter-sign-up" class="min-h-dvh bg-blue-700 text-blue-800">
-    <article class="signup-card" aria-labelledby="signup-title">
+    <article class="signup-card md:motion-safe:animate-fade-in-up" aria-labelledby="signup-title">
       <picture class="signup-illustration">
         <source
           media="(min-width: 64rem)"
@@ -332,24 +332,6 @@ input[aria-invalid='true']:focus {
   .signup-form {
     gap: 24px;
     margin-top: 32px;
-  }
-}
-
-@media (min-width: 48rem) and (prefers-reduced-motion: no-preference) {
-  article {
-    animation: fade-in 1s ease-out;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 </style>

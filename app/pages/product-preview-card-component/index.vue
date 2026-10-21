@@ -33,7 +33,9 @@ onBeforeUnmount(() => clearTimeout(timeoutId))
     id="product-preview-card-component"
     class="flex min-h-[calc(100vh+160px)] items-center justify-center bg-(--color-cream) selection:bg-green-500 selection:text-white md:min-h-screen"
   >
-    <article class="flex w-87.5 flex-col overflow-hidden rounded-lg bg-white md:w-150 md:flex-row">
+    <article
+      class="flex w-87.5 flex-col overflow-hidden rounded-lg bg-white motion-safe:animate-fade-in-up md:w-150 md:flex-row"
+    >
       <picture class="md:shrink-0">
         <source media="(min-width: 48rem)" :srcset="desktopImage.srcset" width="300" height="450" />
         <NuxtImg
@@ -136,24 +138,8 @@ onBeforeUnmount(() => clearTimeout(timeoutId))
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  article {
-    animation: fade-in 1s ease-out;
-  }
-
   .slide-right {
     animation: slide-right 500ms ease-in forwards;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 

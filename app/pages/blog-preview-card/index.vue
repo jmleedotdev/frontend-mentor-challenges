@@ -8,7 +8,7 @@ await useChallengePage()
     <h1 class="sr-only">Blog preview card</h1>
 
     <article
-      class="w-81.75 space-y-6 rounded-[20px] border border-gray-950 bg-white p-6 drop-shadow-[8px_8px_black] xl:w-96"
+      class="w-81.75 space-y-6 rounded-[20px] border border-gray-950 bg-white p-6 drop-shadow-[8px_8px_black] motion-safe:animate-fade-in-up xl:w-96"
     >
       <img
         src="/img/blog-preview-card/illustration-article.svg"
@@ -76,23 +76,5 @@ await useChallengePage()
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: 0px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  article {
-    animation: fade-in 1s ease-out;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 </style>

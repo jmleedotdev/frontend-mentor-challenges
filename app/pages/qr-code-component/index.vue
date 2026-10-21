@@ -5,7 +5,9 @@ await useChallengePage()
 
 <template>
   <main id="qr-code-component" class="flex min-h-dvh items-center justify-center bg-slate-300">
-    <article class="w-80 rounded-[20px] bg-white p-4 pb-10 text-center">
+    <article
+      class="w-80 rounded-[20px] bg-white p-4 pb-10 text-center motion-safe:animate-fade-in-up"
+    >
       <NuxtImg
         src="/img/qr-code-component/image-qr-code.png"
         alt="Frontend Mentor website QR code"
@@ -45,23 +47,5 @@ await useChallengePage()
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: 0.2px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  article {
-    animation: fade-in 1s ease-out;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 </style>

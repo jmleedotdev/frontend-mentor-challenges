@@ -38,18 +38,22 @@ const cards = [
   >
     <div class="w-full max-w-79 md:max-w-135">
       <hgroup class="text-center">
-        <p class="text-preset-2 fade-in text-2xl md:text-4xl">Reliable, efficient delivery</p>
+        <p
+          class="text-preset-2 text-2xl motion-safe:animate-fade-in-up motion-safe:[animation-fill-mode:backwards] md:text-4xl"
+        >
+          Reliable, efficient delivery
+        </p>
 
         <h1
           id="powered-by-technology"
-          class="text-preset-1 fade-in animation-delay text-2xl md:text-4xl"
+          class="text-preset-1 animation-delay text-2xl motion-safe:animate-fade-in-up motion-safe:[animation-fill-mode:backwards] md:text-4xl"
         >
           Powered by Technology
         </h1>
       </hgroup>
 
       <p
-        class="text-preset-4 fade-in animation-delay mt-4 text-center"
+        class="text-preset-4 animation-delay mt-4 text-center motion-safe:animate-fade-in-up motion-safe:[animation-fill-mode:backwards]"
         style="--animation-delay: 0.4s"
       >
         Our Artificial Intelligence powered tools use millions of project data points to ensure that
@@ -58,7 +62,7 @@ const cards = [
     </div>
 
     <div
-      class="fade-in animation-delay w-full max-w-79 md:max-w-165 xl:max-w-278.5"
+      class="animation-delay w-full max-w-79 motion-safe:animate-fade-in-up motion-safe:[animation-fill-mode:backwards] md:max-w-165 xl:max-w-278.5"
       style="--animation-delay: 0.6s"
     >
       <ul role="list" class="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
@@ -140,26 +144,9 @@ const cards = [
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .fade-in {
-    animation: fade-in 1s ease-out;
-    animation-fill-mode: backwards;
-  }
-
   .animation-delay {
     --animation-delay: 0.2s;
     animation-delay: var(--animation-delay);
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
 </style>

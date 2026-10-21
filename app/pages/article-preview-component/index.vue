@@ -44,7 +44,7 @@ function dismissOnEscape() {
 <template>
   <main
     id="article-preview-component"
-    class="flex min-h-dvh items-center justify-center bg-gray-200 px-6 py-6 text-gray-900"
+    class="flex min-h-dvh items-center justify-center bg-gray-200 px-6 py-6 text-gray-900 motion-safe:animate-fade-in-up"
     @pointerdown="dismissOnOutsideClick"
     @keydown.esc="dismissOnEscape"
   >
@@ -311,23 +311,5 @@ function dismissOnEscape() {
 .text-preset-3 {
   font-weight: 500;
   letter-spacing: 25%;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  main {
-    animation: fade-in 1s ease-out;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 </style>

@@ -91,7 +91,9 @@ const nutrition = [
     id="recipe-page"
     class="flex min-h-screen items-center justify-center bg-stone-100 selection:bg-rose-800 selection:text-white"
   >
-    <article class="text-preset-4 bg-white md:my-32 md:w-154 md:rounded-3xl lg:w-184">
+    <article
+      class="text-preset-4 bg-white md:my-32 md:w-154 md:rounded-3xl md:motion-safe:animate-fade-in-up lg:w-184"
+    >
       <div class="md:m-10">
         <NuxtImg
           src="/img/recipe-page/image-omelette.jpeg"
@@ -302,23 +304,5 @@ h2:hover .header-anchor,
 
 .header-anchor::before {
   content: '#';
-}
-
-@media (min-width: 48rem) and (prefers-reduced-motion: no-preference) {
-  article {
-    animation: fade-in 1s ease-out;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 </style>

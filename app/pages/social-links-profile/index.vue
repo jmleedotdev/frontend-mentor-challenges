@@ -32,7 +32,7 @@ const links = [
     class="flex min-h-dvh items-center justify-center bg-gray-900 p-6"
   >
     <article
-      class="flex w-full max-w-81.75 flex-col items-center gap-6 rounded-xl bg-gray-800 p-6 lg:max-w-96 lg:p-10"
+      class="flex w-full max-w-81.75 flex-col items-center gap-6 rounded-xl bg-gray-800 p-6 motion-safe:animate-fade-in-up lg:max-w-96 lg:p-10"
     >
       <NuxtImg
         src="/img/social-links-profile/avatar-jessica.jpeg"
@@ -97,23 +97,5 @@ const links = [
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: 0px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  article {
-    animation: fade-in 1s ease-out;
-  }
-}
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 </style>
