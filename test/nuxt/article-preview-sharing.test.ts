@@ -79,7 +79,7 @@ describe('Article sharing', () => {
     for (const link of links) {
       expect(link.attributes('target')).toBe('_blank')
       expect(link.attributes('rel')).toContain('noopener')
-      expect(link.attributes('aria-label')).toMatch(/^Visit .+ \(opens in a new tab\)$/)
+      expect(link.attributes('aria-label')).toMatch(/^Share on .+ \(opens in a new tab\)$/)
     }
   })
 
