@@ -69,4 +69,11 @@ export const challenges: Challenge[] = [
       'This will test your skills with basic form structure, validation, and submission. The success state will also be an excellent opportunity to work with DOM manipulation.',
     difficulty: 2,
   },
+  {
+    slug: 'time-tracking-dashboard',
+    title: 'Time tracking dashboard',
+    description:
+      'A perfect opportunity to practice your CSS Grid skills. For anyone wanting to take it up a notch, we provide a JSON data file to practice working with data.',
+    difficulty: 2,
+  },
 ]

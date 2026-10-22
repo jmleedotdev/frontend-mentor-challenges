@@ -73,6 +73,7 @@ export default defineNuxtConfig({
       { name: 'Red Hat Display', weights: [500, 900] },
       { name: 'Manrope', weights: [500, 700] },
       { name: 'Roboto', weights: [400, 700] },
+      { name: 'Rubik', weights: [300, 400, 500] },
     ],
   },
 })
