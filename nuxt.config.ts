@@ -74,6 +74,7 @@ export default defineNuxtConfig({
       { name: 'Manrope', weights: [500, 700] },
       { name: 'Roboto', weights: [400, 700] },
       { name: 'Rubik', weights: [300, 400, 500] },
+      { name: 'Space Mono', weights: [700] },
     ],
   },
 })

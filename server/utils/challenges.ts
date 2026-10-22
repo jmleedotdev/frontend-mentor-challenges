@@ -76,4 +76,11 @@ export const challenges: Challenge[] = [
       'A perfect opportunity to practice your CSS Grid skills. For anyone wanting to take it up a notch, we provide a JSON data file to practice working with data.',
     difficulty: 2,
   },
+  {
+    slug: 'tip-calculator-app',
+    title: 'Tip calculator app',
+    description:
+      'This small app is perfect for anyone starting to get to grips with JavaScript. The calculator functionality will be a nice test!',
+    difficulty: 2,
+  },
 ]
