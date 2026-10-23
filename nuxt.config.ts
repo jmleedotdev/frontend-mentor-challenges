@@ -21,6 +21,7 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@nuxt/icon',
     'motion-v/nuxt',
+    '@vueuse/nuxt',
   ],
 
   css: ['~/assets/css/main.css'],
@@ -75,6 +76,7 @@ export default defineNuxtConfig({
       { name: 'Roboto', weights: [400, 700] },
       { name: 'Rubik', weights: [300, 400, 500] },
       { name: 'Space Mono', weights: [700] },
+      { name: 'JetBrains Mono', weights: [700] },
     ],
   },
 })

@@ -83,4 +83,11 @@ export const challenges: Challenge[] = [
       'This small app is perfect for anyone starting to get to grips with JavaScript. The calculator functionality will be a nice test!',
     difficulty: 2,
   },
+  {
+    slug: 'password-generator-app',
+    title: 'Password generator app',
+    description:
+      "This app will be an excellent test of your HTML, CSS, and JS skills. You'll build custom form controls and use JavaScript to generate random passwords.",
+    difficulty: 3,
+  },
 ]
