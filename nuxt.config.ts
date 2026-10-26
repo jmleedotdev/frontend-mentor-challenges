@@ -22,7 +22,16 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     'motion-v/nuxt',
     '@vueuse/nuxt',
+    '@nuxtjs/color-mode',
   ],
+
+  colorMode: {
+    preference: 'light',
+    fallback: 'light',
+    storageKey: 'app-color-mode',
+    classPrefix: 'app-',
+    classSuffix: '',
+  },
 
   css: ['~/assets/css/main.css'],
 

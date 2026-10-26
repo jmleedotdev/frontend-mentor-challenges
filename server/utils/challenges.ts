@@ -90,4 +90,11 @@ export const challenges: Challenge[] = [
       "This app will be an excellent test of your HTML, CSS, and JS skills. You'll build custom form controls and use JavaScript to generate random passwords.",
     difficulty: 3,
   },
+  {
+    slug: 'frontend-quiz-app',
+    title: 'Frontend quiz app',
+    description:
+      'This app will test your skills (as well as your knowledge!) as you build out a fully functional quiz. We provide a local JSON file to help you practice working with JSON!',
+    difficulty: 3,
+  },
 ]
