@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import { afterEach, describe, expect, it } from 'vitest'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import { nextTick } from 'vue'
 import QuestionsView from '../../app/components/frontend-quiz-app/QuestionsView.vue'
 import type { FrontendQuiz } from '../../shared/types/frontend-quiz'
@@ -21,7 +21,14 @@ const quiz: FrontendQuiz = {
   ],
 }
 const wrappers: ReturnType<typeof mount>[] = []
-afterEach(() => wrappers.splice(0).forEach((wrapper) => wrapper.unmount()))
+beforeEach(() => {
+  // Keep the existing interaction tests in source order; shuffle tests override this.
+  vi.spyOn(Math, 'random').mockReturnValue(0.999)
+})
+afterEach(() => {
+  wrappers.splice(0).forEach((wrapper) => wrapper.unmount())
+  vi.restoreAllMocks()
+})
 
 function mountView(errorMessage?: string) {
   const wrapper = mount(QuestionsView, { props: { quiz, errorMessage }, attachTo: document.body })
@@ -39,6 +46,76 @@ async function advance(wrapper: ReturnType<typeof mount>) {
 }
 
 describe('Frontend quiz QuestionsView', () => {
+  it('shuffles copied questions and options once per attempt while preserving scoring', async () => {
+    vi.mocked(Math.random).mockReturnValue(0)
+    const original = structuredClone(quiz)
+    const wrapper = mountView()
+    const seen: string[] = []
+
+    expect(wrapper.get('h1').text()).toBe('An accessible element?')
+    expect(wrapper.findAll('.answer-text').map((option) => option.text())).toEqual([
+      'A clickable div',
+      'A button',
+    ])
+
+    for (let index = 0; index < quiz.questions.length; index++) {
+      const heading = wrapper.get('h1').text()
+      seen.push(heading)
+      const source = quiz.questions.find((question) => question.question === heading)!
+      const options = wrapper.findAll('.answer-text').map((option) => option.text())
+      expect(options).not.toEqual(source.options)
+      expect([...options].sort()).toEqual([...source.options].sort())
+      expect(wrapper.findAll('.answer-letter').map((letter) => letter.text())).toEqual(
+        options.map((_, optionIndex) => String.fromCharCode(65 + optionIndex)),
+      )
+      const correctIndex = options.indexOf(source.answer)
+      await wrapper.findAll('input')[(correctIndex + 1) % options.length]!.setValue(true)
+      await wrapper.findAll('input')[correctIndex]!.setValue(true)
+      expect(wrapper.get('h1').text()).toBe(heading)
+      expect(wrapper.findAll('.answer-text').map((option) => option.text())).toEqual(options)
+      await submit(wrapper)
+      expect(wrapper.get('[role="status"]').text()).toBe('Correct!')
+      expect(wrapper.findAll('.answer-text').map((option) => option.text())).toEqual(options)
+      await advance(wrapper)
+    }
+
+    expect(seen).toEqual([...quiz.questions].reverse().map((question) => question.question))
+    expect(wrapper.get('.score .sr-only').text()).toBe('Your score: 2 out of 2')
+    expect(quiz).toEqual(original)
+  })
+
+  it('creates a fresh shuffle when the same subject is mounted for another attempt', () => {
+    const first = mountView()
+    expect(first.get('h1').text()).toBe('Minimum contrast?')
+    first.unmount()
+
+    vi.mocked(Math.random).mockReturnValue(0)
+    const second = mountView()
+    expect(second.get('h1').text()).toBe('An accessible element?')
+    expect(second.findAll('.answer-text').map((option) => option.text())).toEqual([
+      'A clickable div',
+      'A button',
+    ])
+    expect(second.find('input:checked').exists()).toBe(false)
+  })
+
+  it('reshuffles and resets when a different quiz is supplied', async () => {
+    const wrapper = mountView()
+    await wrapper.findAll('input')[0]!.setValue(true)
+    await submit(wrapper)
+
+    vi.mocked(Math.random).mockReturnValue(0)
+    await wrapper.setProps({ quiz: { ...quiz, title: 'HTML' } })
+    expect(wrapper.get('h1').text()).toBe('An accessible element?')
+    expect(wrapper.findAll('.answer-text').map((option) => option.text())).toEqual([
+      'A clickable div',
+      'A button',
+    ])
+    expect(wrapper.get('.question-count').text()).toBe('Question 1 of 2')
+    expect(wrapper.find('input:checked').exists()).toBe(false)
+    expect(wrapper.find('.answer-feedback').exists()).toBe(false)
+  })
+
   it('starts unselected, disables submission and exposes question progress', () => {
     const wrapper = mountView()
     expect(wrapper.get('h1').text()).toBe('Minimum contrast?')

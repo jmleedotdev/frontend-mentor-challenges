@@ -10,6 +10,9 @@ Independent frontend challenges presented in a shared gallery.
 
 **Subject**: A frontend knowledge area covered by a quiz: HTML, CSS, JavaScript, or Accessibility.
 
+**Attempt**: One complete run through the questions for a selected subject, ending in a score.
+_Avoid_: Round
+
 **Selected answer**: The learner’s current choice for a question before submission. It can still be changed and has not been evaluated.
 
 **Submitted answer**: The learner’s confirmed choice for a question. It is final for that question and has been evaluated against the correct answer.

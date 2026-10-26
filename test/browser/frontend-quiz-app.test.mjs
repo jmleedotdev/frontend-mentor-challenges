@@ -610,8 +610,13 @@ test('real API quiz works with the keyboard, scores once and restarts without pe
     const quiz = (await response.json()).data.find((subject) => subject.title === 'HTML')
     await page.getByRole('button', { name: 'HTML', exact: true }).focus()
     await page.keyboard.press('Enter')
-    for (const [index, question] of quiz.questions.entries()) {
-      assert.equal(await page.getByRole('heading', { level: 1 }).innerText(), question.question)
+    const seenQuestions = new Set()
+    for (let index = 0; index < quiz.questions.length; index++) {
+      const heading = await page.getByRole('heading', { level: 1 }).innerText()
+      const question = quiz.questions.find((candidate) => candidate.question === heading)
+      assert(question, `Unknown question: ${heading}`)
+      assert.equal(seenQuestions.has(heading), false, `Repeated question: ${heading}`)
+      seenQuestions.add(heading)
       assert.equal(await page.getByRole('button', { name: 'Submit Answer' }).isDisabled(), true)
       await page.getByRole('radio').first().focus()
       await page.keyboard.press('Space')
@@ -624,7 +629,7 @@ test('real API quiz works with the keyboard, scores once and restarts without pe
       assert.equal(await page.locator('.answer-form [role="status"]').innerText(), 'Correct!')
       assert.equal(
         await page.locator(':focus').innerText(),
-        index === 9 ? 'See results' : 'Next Question',
+        index === quiz.questions.length - 1 ? 'See results' : 'Next Question',
       )
       await page.keyboard.press('Enter')
     }

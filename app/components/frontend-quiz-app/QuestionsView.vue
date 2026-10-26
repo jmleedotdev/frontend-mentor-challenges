@@ -3,6 +3,25 @@ import type { FrontendQuiz } from '#shared/types/frontend-quiz'
 
 const { quiz, errorMessage = '' } = defineProps<{ quiz: FrontendQuiz; errorMessage?: string }>()
 const emit = defineEmits<{ restart: [] }>()
+function shuffle<T>(items: readonly T[]): T[] {
+  const shuffled = [...items]
+
+  for (let index = shuffled.length - 1; index > 0; index--) {
+    const randomIndex = Math.floor(Math.random() * (index + 1))
+    ;[shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex]!, shuffled[index]!]
+  }
+
+  return shuffled
+}
+
+function createAttempt() {
+  return shuffle(quiz.questions).map((question) => ({
+    ...question,
+    options: shuffle(question.options),
+  }))
+}
+
+const questions = ref(createAttempt())
 const questionIndex = ref(0)
 const selectedIndex = ref<number | null>(null)
 const submitted = ref(false)
@@ -11,7 +30,7 @@ const score = ref(0)
 const submissionError = ref('')
 const heading = useTemplateRef<HTMLHeadingElement>('heading')
 const nextButton = useTemplateRef<HTMLButtonElement>('nextButton')
-const question = computed(() => quiz.questions[questionIndex.value])
+const question = computed(() => questions.value[questionIndex.value])
 const correctIndex = computed(() => question.value?.options.indexOf(question.value.answer))
 const isCorrect = computed(() => selectedIndex.value === correctIndex.value)
 const visibleError = computed(() => errorMessage || submissionError.value)
@@ -26,6 +45,7 @@ onMounted(focusHeading)
 watch(
   () => quiz,
   async () => {
+    questions.value = createAttempt()
     questionIndex.value = 0
     selectedIndex.value = null
     submitted.value = false
