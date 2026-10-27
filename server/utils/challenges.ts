@@ -97,4 +97,11 @@ export const challenges: Challenge[] = [
       'This app will test your skills (as well as your knowledge!) as you build out a fully functional quiz. We provide a local JSON file to help you practice working with JSON!',
     difficulty: 3,
   },
+  {
+    slug: 'interactive-rating-component',
+    title: 'Interactive rating component',
+    description:
+      'This is a nice, small project to practice handling user interactions and updating the DOM. Perfect for anyone who has learned the basics of JavaScript!',
+    difficulty: 1,
+  },
 ]

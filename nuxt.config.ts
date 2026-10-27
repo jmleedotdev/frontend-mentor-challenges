@@ -86,6 +86,7 @@ export default defineNuxtConfig({
       { name: 'Rubik', weights: [300, 400, 500] },
       { name: 'Space Mono', weights: [700] },
       { name: 'JetBrains Mono', weights: [700] },
+      { name: 'Overpass', weights: [400, 600, 700] },
     ],
   },
 })

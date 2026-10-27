@@ -31,3 +31,12 @@ _Avoid_: Preview password
 
 **Password strength**: An estimate of the generated password's resistance to guessing, expressed as Too Weak, Weak, Medium, or Strong. It describes the generated password, not unused settings, and is not a security guarantee.
 _Avoid_: Password validity
+
+### Interactive rating
+
+**Selected rating**: The visitor’s current choice from 1 to 5 before submission. It can still be changed.
+
+**Submitted rating**: The rating confirmed by the visitor when submitting feedback.
+
+**Thank-you view**: The confirmation shown after a rating is submitted, acknowledging the feedback and displaying the submitted rating.
+_Avoid_: Thank-you page
